@@ -1,4 +1,4 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { Hero } from './hero';
 import { Observable, of } from 'rxjs';
 import { MessagesService } from './messages.service';
@@ -76,7 +76,7 @@ export class HeroService {
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);
-      this.log(`${operation} failde: ${error.message}`);
+      this.log(`${operation} failed: ${error.message}`);
       return of (result as T);
     };
   }
